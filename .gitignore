@@ -1,0 +1,8 @@
+assets/model_saved
+assets/models/*
+assets/settings.json
+assets/char_nn.onnx
+build/*
+python_venvs/digitsNN
+python_venvs/yolotrain
+third_party/*
