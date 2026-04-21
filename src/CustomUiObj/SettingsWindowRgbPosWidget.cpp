@@ -6,6 +6,9 @@ SettingsWindowRgbPosWidget::SettingsWindowRgbPosWidget(const QString& title,
                             QWidget* parent)
     : QWidget(parent), wm(wm), currentValue(currnentValue), title(title)
 {
+    setupUi();
+    setupLayout();
+    setupConnections();
 }
 
 void SettingsWindowRgbPosWidget::setupUi()

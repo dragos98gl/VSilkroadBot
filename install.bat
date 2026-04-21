@@ -68,9 +68,9 @@ if errorlevel 1 (
     exit /b 1
 )
 
-python digitNN.py
+call train.bat
 if errorlevel 1 (
-    echo [ERROR] digitNN.py failed.
+    echo [ERROR] train.bat failed.
     pause
     exit /b 1
 )

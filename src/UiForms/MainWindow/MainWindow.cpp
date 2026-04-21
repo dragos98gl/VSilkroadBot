@@ -75,8 +75,11 @@ void MainWindow::setupUI()
 
 void MainWindow::populateModelsList()
 {
+    modelsList->clear();
+
     QDir modelDir("./assets/models");
     modelDir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
+
     const QStringList folders = modelDir.entryList();
     for (const QString& folder : folders)
         modelsList->addItem(folder);
@@ -136,6 +139,9 @@ void MainWindow::onCheckHandleClicked()
 void MainWindow::onTrainNewModelClicked()
 {
     auto* w = new TrainWindow(wm);
+    connect(w, &QObject::destroyed, this, [this]() {
+        populateModelsList();
+    });
     w->show();
 }
 

@@ -139,7 +139,7 @@ void TrainWindow::onSave()
 
     if (view->getRectangles().isEmpty()) return;
 
-    QString baseDir = QString("./models/%1/").arg(recordNameText);
+    QString baseDir = QString("./assets/models/%1/").arg(recordNameText);
     QString type = trainButton->isChecked() ? "train" : "val";
     QString imgDir = baseDir + "images/" + type + "/";
     QString lblDir = baseDir + "labels/" + type + "/";
@@ -209,7 +209,7 @@ void TrainWindow::onSave()
 }
 
 void TrainWindow::saveYaml(const QString& recordName) {
-    QString baseDir = QDir::current().absoluteFilePath("models/" + recordName);
+    QString baseDir = QDir::current().absoluteFilePath("assets/models/" + recordName);
     QString yamlPath = baseDir + "/dataset.yaml";
 
     QFile file(yamlPath);

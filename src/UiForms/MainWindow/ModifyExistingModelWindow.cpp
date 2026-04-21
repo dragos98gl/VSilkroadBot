@@ -16,8 +16,12 @@
 ModifyExistingModelWindow::ModifyExistingModelWindow(std::shared_ptr<WindowManager> wm_, QString modelName_, QWidget* parent)
     : QWidget(parent), wm(wm_), modelName(modelName_)
 {
+    setWindowTitle("Modify existing model");
+    setFixedSize(1366 + 200, 768);
+    setAttribute(Qt::WA_DeleteOnClose);
+
     QDir currentDir = QDir::currentPath();
-    QString modelPath = currentDir.absoluteFilePath(QString("models/%1/runs/detect/out/weights/best.onnx").arg(modelName));
+    QString modelPath = currentDir.absoluteFilePath(QString("assets/models/%1/runs/detect/out/weights/best.onnx").arg(modelName));
 
     if (QFileInfo::exists(modelPath)) {
         mobsNet = std::make_unique<cv::dnn::Net>(cv::dnn::readNetFromONNX(modelPath.toStdString().c_str()));
@@ -83,10 +87,6 @@ void ModifyExistingModelWindow::setupUi()
 }
 void ModifyExistingModelWindow::setupLayout()
 {
-    setWindowTitle("Modify existing model");
-    setFixedSize(1366 + 200, 768);
-    setAttribute(Qt::WA_DeleteOnClose);
-
 }
 
 void ModifyExistingModelWindow::setupConnections()

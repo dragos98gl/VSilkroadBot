@@ -276,6 +276,8 @@ void Bot::processAttackingMob()
             std::cout<<"[LOG][COMBAT][" << utils::getTimestamp() << "] Mob selection failure threshold reached, changing spot.\n";
             botNavigation.changeSpot();
             mobsSelectionFailureCnt = 0;
+            state = BotState::Movement;
+            return;
         } else
         {
             state = BotState::SearchingForMob;

@@ -225,12 +225,34 @@ void SettingsManager::saveNavigation(json& j, const std::vector<NavigationStruct
 BotSettings SettingsManager::createDefault()
 {
     BotSettings s;
+
+    s.Skill1Pixel                   = { QPoint(561, 732), QColor(0, 0, 0) };
+    s.Skill2Pixel                   = { QPoint(597, 732), QColor(0, 0, 0) };
+    s.Skill3Pixel                   = { QPoint(632, 732), QColor(0, 0, 0) };
+    s.Skill4Pixel                   = { QPoint(677, 732), QColor(0, 0, 0) };
+    s.Skill5Pixel                   = { QPoint(708, 732), QColor(0, 0, 0) };
+    s.Buff1Pixel                    = { QPoint(0, 0), QColor(0, 0, 0) };
+    s.Buff2Pixel                    = { QPoint(0, 0), QColor(0, 0, 0) };
+    s.Buff3Pixel                    = { QPoint(0, 0), QColor(0, 0, 0) };
+
+    s.isEliteMobPixel              = { QPoint(657, 68), QColor(222, 255, 222) };
+    s.isNormalMobPixel             = { QPoint(657, 69), QColor(33, 41, 115) };
+    s.isPartyMobPixel              = { QPoint(657, 70), QColor(74, 0, 82) };
+    s.isChampionMobPixel           = { QPoint(658, 68), QColor(165, 239, 66) };
+    s.isGiantMobPixel              = { QPoint(657, 70), QColor(82, 0, 74) };
+
+    s.mobHealthPixel               = { QPoint(579, 45), QColor(255, 198, 198) };
+
     s.waitForMobValue               = std::chrono::milliseconds(200);
     s.waitForHealthBarValue         = std::chrono::milliseconds(200);
     s.doubleClickOnMob              = false;
     s.noMobsFoundThreshold          = 2;
     s.mobsSelectionFailureThreshold = 2;
     s.mobsSeekLimit                 = 5;
+
+    s.normalMobTimeout              = 3;
+    s.championMobTimeout            = 3;
+    s.giantMobTimeout               = 10;
     
     return s;
 }

@@ -8,6 +8,10 @@ BotKeyPointsSettingsWindow::BotKeyPointsSettingsWindow(std::shared_ptr<WindowMan
     setAttribute(Qt::WA_DeleteOnClose);
 
     settings = settingsManager.loadSettings("assets/settings.json");
+
+    setupUi();
+    setupLayout();
+    setupConnections();
 }
 
 void BotKeyPointsSettingsWindow::setupUi()
