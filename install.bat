@@ -28,7 +28,7 @@ if errorlevel 1 (
     pause
     exit /b 1
 )
-echo      [OK] Interception driver installed.
+echo      [OK] Interception driver installed. Restarting computer is required for changes to take effect.
 
 :: ============================================================
 :: 3. Python environments

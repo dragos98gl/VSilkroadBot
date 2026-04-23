@@ -83,48 +83,43 @@ The executable can be found at build/Release/VSilkroadBot.exe
 
 ## Usage
 
-### Training Models
+### Main Window
+![MainWindow](assets/demo/MainWindow.png)
+1. **Configure the Silkroad Online window name**
+2. **Model training**
+![ModelTraining](assets/demo/TrainingWindow.png)
+3. **Model loading**
+4. **Modify existing model**
+   - Available for tained models
+   - Allows assisted detections based on the current model
 
-1. **Launch the Training Interface**
-   ```bash
-   # From the main window, click "Train new model"
-   ```
+### Bot Options
+![BotSettings](assets/demo/BotOptions.png)
 
-2. **Collect Training Data**
-   - Use the built-in data collection tools
-   - Label images with mob positions
-   - Organize data in the proper format
+1. **Navigation Settings**
+   - Define attacking areas, no mobs spots, trajectory
+   
+![NavigationSettings](assets/demo/NavigationSettings.png)
 
-3. **Train the Model**
-   - Select your training dataset
-   - Configure training parameters
-   - Start the training process
+2. **Bot Key Points Settings**
+   - Mobs health bar pixel data and position
+   - Mobs type pixel data and position
+   - Skills & Buffs pixel data and position
 
-4. **Export and Load Model**
-   - Export the trained model as ONNX
-   - Load the model in the main application
+![KeypointsSettings](assets/demo/KeyPointsSettings.png)
 
-### Bot Configuration
+3. **Bot Combat Settings**
+   - Bot reaction timing
+   - Combat behaviour
+   - Mobs timeout configuration
 
-1. **Window Detection**
-   - Configure the Silkroad Online window name
-   - Verify window handle detection
+![CombatSettings](assets/demo/CombatSettings.png)
 
-2. **Mob Detection Settings**
-   - Set up health bar detection
-   - Configure mob type recognition
-   - Adjust detection thresholds
-
-3. **Navigation Setup**
-   - Define attacking areas
-   - Set up movement patterns
-   - Configure bypass zones
-
-4. **Skill Configuration**
-   - Map skills to hotkeys
-   - Configure skill usage timing
-   - Set up buff management
-
+### Bot Window
+   - Mini-map preview
+   - Detections preview
+   - Only Attacking mode (uses only the attacking skills if the mob's health bar is detected)
+![BotWindow](assets/demo/BotWindow.png)
 
 ## Important Notes
 

@@ -51,7 +51,7 @@ inline std::vector<TrainingModel> loadTrainingModels(const QString& modelName)
 {
     std::vector<TrainingModel> result;
 
-    QString baseDir = QString("./models/%1/").arg(modelName);
+    QString baseDir = QString("./assets/models/%1/").arg(modelName);
     QStringList types = {"train", "val"};
 
     for (const QString& type : types)

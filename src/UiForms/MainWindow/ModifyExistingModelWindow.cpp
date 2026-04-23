@@ -194,7 +194,7 @@ void ModifyExistingModelWindow::onSave()
     int selectedRow = filesList->currentRow(); // selected element in the file list
     bool editingExisting = (selectedRow >= 0 && selectedRow < trainingModels.size());
 
-    QString baseDir = QString("./models/%1/").arg(modelName);
+    QString baseDir = QString("./assets/models/%1/").arg(modelName);
     QString type = trainButton->isChecked() ? "train" : "val";
     QString imgDir = baseDir + "images/" + type + "/";
     QString lblDir = baseDir + "labels/" + type + "/";
@@ -299,7 +299,7 @@ void ModifyExistingModelWindow::onSave()
 }
 
 void ModifyExistingModelWindow::saveYaml(const QString& recordName) {
-    QString baseDir = QDir::current().absoluteFilePath("models/" + recordName);
+    QString baseDir = QDir::current().absoluteFilePath("assets/models/" + recordName);
     QString yamlPath = baseDir + "/dataset.yaml";
 
     QFile file(yamlPath);
